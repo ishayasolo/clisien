@@ -1,0 +1,30 @@
+{
+  "name": "clisien",
+  "version": "1.0.0",
+  "description": "This Client-Side Encryption Package provides an easy-to-use solution for securing data transmitted between client applications and backend servers. This package incorporates client-side encryption to protect user data and emphasizes data privacy.",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishayasolo/clisien.git"
+  },
+  "keywords": [
+    "client",
+    "client-side",
+    "encryption",
+    "data",
+    "privacy"
+  ],
+  "author": "Ishaya Solomon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishayasolo/clisien/issues"
+  },
+  "homepage": "https://github.com/ishayasolo/clisien#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
