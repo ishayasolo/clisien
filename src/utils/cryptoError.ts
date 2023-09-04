@@ -8,7 +8,7 @@ export class CryptoError extends Error {
    * @param message - The error message.
    */
   constructor(message: string) {
-    super(message);
-    this.name = 'CryptoError';
+    super(message)
+    this.name = 'CryptoError'
   }
 }

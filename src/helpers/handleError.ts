@@ -1,4 +1,4 @@
-import { CryptoError } from "../cryptoError";
+import { CryptoError } from '../utils/cryptoError'
 
 /**
  * A generic error handler that wraps the provided callback function.
@@ -9,8 +9,8 @@ import { CryptoError } from "../cryptoError";
  */
 export const handleError = <T>(callback: () => T): T => {
   try {
-    return callback();
+    return callback()
   } catch (error: any) {
-    throw new CryptoError(error.message);
+    throw new CryptoError(error.message)
   }
-};
+}
