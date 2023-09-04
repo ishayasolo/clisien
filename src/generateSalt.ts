@@ -11,7 +11,7 @@
  * const userSalt = generateSalt(); // Generates a random 32-character salt
  * const customSalt = generateSalt(64); // Generates a random 64-character salt
  */
-const generateSalt = (saltLength: number = 32): string => {
+const generateSalt = (saltLength: number = 32): Uint8Array => {
 	const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	let salt = "";
 
@@ -20,7 +20,8 @@ const generateSalt = (saltLength: number = 32): string => {
 		salt += charset[randomIndex];
 	}
 
-	return salt;
+	const encoder = new TextEncoder();
+  return encoder.encode(salt);
 }
 
-export default generateSalt;
+export { generateSalt };

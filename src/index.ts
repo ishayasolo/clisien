@@ -1,3 +1,3 @@
-import generateSalt from './generateSalt'
+import { generateSalt } from './generateSalt';
 
-export { generateSalt }
+export { generateSalt };
