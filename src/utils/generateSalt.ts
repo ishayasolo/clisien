@@ -1,4 +1,5 @@
-import { handleError } from '../helpers/handleError'
+import { CryptoError } from '../errors'
+import { handleError } from './handleError';
 
 /**
  * Generates a cryptographically secure random salt for enhancing password security.
@@ -17,13 +18,16 @@ import { handleError } from '../helpers/handleError'
  * const customSalt = generateSalt(64); // Generates a cryptographically secure random 64-byte salt
  */
 export const generateSalt = (saltLength: number = 32): Uint8Array => {
-  return handleError(() => {
-    // Create a Uint8Array to store the random salt.
-    const randomValues = new Uint8Array(saltLength)
+  return handleError<Uint8Array, CryptoError>(
+    () => {
+      // Create a Uint8Array to store the random salt.
+      const randomValues = new Uint8Array(saltLength)
 
-    // Use a cryptographically secure random number generator.
-    window.crypto.getRandomValues(randomValues)
+      // Use a cryptographically secure random number generator.
+      window.crypto.getRandomValues(randomValues)
 
-    return randomValues
-  })
+      return randomValues
+    },
+    (error: any) => `Failed to generate salt: ${error.message}`
+  )
 }
